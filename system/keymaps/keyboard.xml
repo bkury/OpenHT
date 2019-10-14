@@ -26,6 +26,9 @@
 <keymap>
   <global>
     <keyboard>
+      <F4>Skin.ToggleSetting(DebugGrid)</F4>
+      <F5>ReloadSkin()</F5>
+      <F6>Notification(Testing 123,Hello world)</F6>
       <p>Play</p>
       <q>Queue</q>
       <f>FastForward</f>
