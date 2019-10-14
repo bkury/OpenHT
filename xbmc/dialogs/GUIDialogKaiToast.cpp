@@ -11,6 +11,7 @@
 #include "peripherals/Peripherals.h"
 #include "threads/SingleLock.h"
 #include "utils/TimeUtils.h"
+#include "utils/Variant.h"
 #include "ServiceBroker.h"
 
 #define POPUP_ICON                400
@@ -45,6 +46,10 @@ bool CGUIDialogKaiToast::OnMessage(CGUIMessage& message)
 
   case GUI_MSG_WINDOW_DEINIT:
     {
+      // Clear properties
+      SetProperty("line1", "");
+      SetProperty("line2", "");
+      SetProperty("icon", "");
     }
     break;
   }
@@ -118,7 +123,12 @@ bool CGUIDialogKaiToast::DoWork()
           icon = "DefaultIconInfo.png";
       }
       SET_CONTROL_FILENAME(POPUP_ICON, icon);
+      SetProperty("icon", icon);
     }
+
+    // Set notification properties for skins
+    SetProperty("line1", toast.caption);
+    SetProperty("line2", toast.description);
 
     //  Play the window specific init sound for each notification queued
     SetSound(toast.withSound);

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>OpenHT JSON-RPC</short>
+  <description>OpenHT is a free cross-platform media-player jukebox and entertainment hub.  Enable this option to remotely control OpenHT via its JSON-RPC API.</description>
+  <port protocol="tcp" port="9090"/>
+</service>

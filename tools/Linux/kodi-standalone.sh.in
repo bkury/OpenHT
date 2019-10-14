@@ -25,6 +25,9 @@ bindir="@bindir@"
 bin_name=@APP_NAME_LC@
 APP="${bindir}/${bin_name} --standalone $@"
 
+# Shared Libaries
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/openht
+
 @XBMC_STANDALONE_SH_PULSE@
 
 LOOP=1

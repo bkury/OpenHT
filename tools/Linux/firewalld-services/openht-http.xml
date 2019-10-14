@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>OpenHT web interface</short>
+  <description>OpenHT is a free cross-platform media-player jukebox and entertainment hub.  Enable this option to remotely control OpenHT via its web interface.</description>
+  <port protocol="tcp" port="8080"/>
+</service>

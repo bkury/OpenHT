@@ -128,9 +128,9 @@ install(FILES ${CMAKE_SOURCE_DIR}/tools/Linux/packaging/media/icon256x256.png
         COMPONENT kodi)
 
 # Install firewalld service definitions
-install(FILES ${CMAKE_SOURCE_DIR}/tools/Linux/firewalld-services/kodi-eventserver.xml
-              ${CMAKE_SOURCE_DIR}/tools/Linux/firewalld-services/kodi-http.xml
-              ${CMAKE_SOURCE_DIR}/tools/Linux/firewalld-services/kodi-jsonrpc.xml
+install(FILES ${CMAKE_SOURCE_DIR}/tools/Linux/firewalld-services/openht-eventserver.xml
+              ${CMAKE_SOURCE_DIR}/tools/Linux/firewalld-services/openht-http.xml
+              ${CMAKE_SOURCE_DIR}/tools/Linux/firewalld-services/openht-jsonrpc.xml
         DESTINATION ${prefix}/lib/firewalld/services
         COMPONENT kodi)
 

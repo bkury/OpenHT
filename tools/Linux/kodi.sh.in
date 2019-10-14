@@ -36,6 +36,9 @@ export __GL_YIELD=USLEEP
 # Fix wasting RAM due to fragmentation
 export MALLOC_MMAP_THRESHOLD_=131072
 
+# Shared Libaries
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/openht
+
 # Check for some options used by this script
 while [ "$#" -gt "0" ]
 do
