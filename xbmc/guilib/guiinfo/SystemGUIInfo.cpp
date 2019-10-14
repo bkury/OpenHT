@@ -478,6 +478,9 @@ bool CSystemGUIInfo::GetBool(bool& value, const CGUIListItem *gitem, int context
       value = false;
 #endif
       return true;
+    case SYSTEM_PLATFORM_OPENHT:
+      value = true;
+      return true;
     case SYSTEM_PLATFORM_LINUX_RASPBERRY_PI:
 #if defined(TARGET_RASPBERRY_PI)
       value = true;
