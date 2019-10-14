@@ -40,6 +40,11 @@
   <addon>screensaver.xbmc.builtin.dim</addon>
   <addon>script.module.pil</addon>
   <addon>script.module.pycryptodome</addon>
+  <addon>script.module.requests</addon>
+  <addon>script.module.urllib3</addon>
+  <addon>script.module.chardet</addon>
+  <addon>script.module.idna</addon>
+  <addon>script.module.certifi</addon>
   <addon optional="true">service.xbmc.versioncheck</addon>
   <addon>skin.estuary</addon>
   <addon>skin.estouchy</addon>
@@ -52,4 +57,5 @@
   <addon>xbmc.python</addon>
   <addon>xbmc.webinterface</addon>
   <addon optional="true">peripheral.joystick</addon>
+  <addon>weather.yahoo</addon>
 </addons>

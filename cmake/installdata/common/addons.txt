@@ -25,6 +25,11 @@ addons/screensaver.xbmc.builtin.black/*
 addons/script.module.pil/*
 addons/script.module.pycryptodome/*
 addons/script.module.pysqlite/*
+addons/script.module.requests/*
+addons/script.module.urllib3/*
+addons/script.module.chardet/*
+addons/script.module.idna/*
+addons/script.module.certifi/*
 addons/resource.language.en_gb/*
 addons/resource.uisounds.kodi/*
 addons/resource.images.weathericons.default/*
@@ -42,3 +47,4 @@ addons/metadata.common.themoviedb.org/*
 addons/metadata.themoviedb.org/*
 addons/metadata.tvshows.themoviedb.org/*
 addons/kodi.vfs/*
+addons/weather.yahoo/*
