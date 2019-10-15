@@ -358,6 +358,8 @@
 #define INTEGER_GREATER_OR_EQUAL    452
 #define INTEGER_LESS_THAN           453
 #define INTEGER_LESS_OR_EQUAL       454
+#define INTEGER_EVEN                455
+#define INTEGER_ODD                 456
 
 #define SKIN_BOOL                   600
 #define SKIN_STRING                 601
@@ -878,6 +880,7 @@
 #define LISTITEM_PROPERTY           (LISTITEM_START + 182)
 #define LISTITEM_EPG_EVENT_ICON     (LISTITEM_START + 183)
 #define LISTITEM_FILENAME_NO_EXTENSION (LISTITEM_START + 187)
+#define LISTITEM_CURRENTITEM        (LISTITEM_START + 188)
 
 #define LISTITEM_END                (LISTITEM_START + 2500)
 
