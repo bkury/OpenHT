@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.plexkodiconnect" name="PlexKodiConnect Addons" version="1.0.2" provider-name="croneter">
+	<requires>
+		<import addon="xbmc.addon" version="12.0.0"/>
+	</requires>
+	<extension point="xbmc.addon.repository" name="PlexKodiConnect Repository">
+		<info compressed="false">https://raw.githubusercontent.com/croneter/binary_repo/master/stable/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/croneter/binary_repo/master/stable/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/croneter/binary_repo/master/stable/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>PlexKodiConnect add-on repository</summary>
+		<description>Repository for stable PlexKodiConnect versions. Check out the beta repository if you are looking for a cutting-edge experience.</description>
+		<disclaimer></disclaimer>
+		<platform>all</platform>
+	</extension>
+</addon>

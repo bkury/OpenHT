@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.plexkodiconnect.tvshows" name="PlexKodiConnect Helper TV Shows" version="2.1.1" provider-name="croneter">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides></provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">PKC Dependency Add-On</summary>
+        <description lang="en">PlexKodiConnect add-on for tv shows</description>
+        <platform>all</platform>
+        <language>en</language>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <forum></forum>
+        <website>https://github.com/croneter/PlexKodiConnect</website>
+        <source></source>
+        <news>version 2.1.1
+- Another attempt to keep Kodi from crashing on playback startup
+
+version 2.1.0
+- Hopefully fix Kodi crashing on playback startup
+
+version 2.0.10
+- Fix UnicodeDecodeError: 'ascii' codec can't decode
+
+version 2.0.9
+- Switch to JSON communication
+
+version 2.0.8
+- Fix browsing of tv shows from info page
+
+version 2.0.7
+- Modify way to transfer data to main PKC Python instance
+
+version 2.0.6
+- Fix setting int/float ListItem attributes
+
+version 2.0.5
+- Switch to absolute paths for imports
+
+version 2.0.4
+- Kodi Leia compatibility: fix EOFError for cPickle Python module
+
+version 2.0.3
+- Also pass add-on handle to main thread
+- Change the way navigation to entire TV show folder works internally
+
+version 2.0.2
+- Correctly handle direct plugin calls
+
+version 2.0.1
+- Fix widget navigating to entire TV show not working
+</news>
+    </extension>
+</addon>

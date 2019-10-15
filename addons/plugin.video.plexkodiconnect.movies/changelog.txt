@@ -1,0 +1,33 @@
+version 2.1.1
+- Another attempt to keep Kodi from crashing on playback startup
+
+version 2.1.0
+- Hopefully fix Kodi crashing on playback startup
+
+version 2.0.9
+- Fix UnicodeDecodeError: 'ascii' codec can't decode
+
+version 2.0.8
+- Switch from cPickle to JSON communication with main PKC add-on
+
+version 2.0.7
+- Modify way to transfer data to main PKC Python instance
+
+version 2.0.6
+- Fix setting int/float ListItem attributes
+
+version 2.0.5
+- Switch to absolute paths for imports
+
+version 2.0.4
+- Kodi Leia compatibility: fix EOFError for cPickle Python module
+
+version 2.0.3
+- Version omitted to be on-par with TV shows helper add-on
+
+version 2.0.2
+- Also pass handle of add-on call to main thread
+
+version 2.0.1
+- Correctly handle direct plugin calls
+- Drop python requests dependency
