@@ -30,6 +30,7 @@ addons/script.module.urllib3/*
 addons/script.module.chardet/*
 addons/script.module.idna/*
 addons/script.module.certifi/*
+addons/script.module.defusedxml/*
 addons/resource.language.en_gb/*
 addons/resource.uisounds.kodi/*
 addons/resource.images.weathericons.default/*
