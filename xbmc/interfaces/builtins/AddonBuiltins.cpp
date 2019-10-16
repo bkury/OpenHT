@@ -71,10 +71,9 @@ static int EnableAddon(const std::vector<std::string>& params)
   if (!CServiceBroker::GetAddonMgr().GetAddon(addonid, addon, ADDON_UNKNOWN, false))
     return -1;
 
-  auto response = HELPERS::ShowYesNoDialogLines(CVariant{24076}, CVariant{24135}, CVariant{addon->Name()}, CVariant{24136});
-
-  if (response == DialogResponse::YES)
-    CServiceBroker::GetAddonMgr().EnableAddon(addonid);
+  // auto response = HELPERS::ShowYesNoDialogLines(CVariant{24076}, CVariant{24135}, CVariant{addon->Name()}, CVariant{24136});
+  // if (response == DialogResponse::YES)
+  CServiceBroker::GetAddonMgr().EnableAddon(addonid);
 
   return 0;
 }
