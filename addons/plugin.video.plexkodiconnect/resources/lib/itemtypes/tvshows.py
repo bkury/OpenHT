@@ -187,7 +187,7 @@ class Show(TvShowMixin, ItemBase):
                                            id_parent_path=toppathid)
         # UPDATE THE TVSHOW #####
         if update_item:
-            LOG.info("UPDATE tvshow plex_id: %s - %s", plex_id, api.title())
+            LOG.debug("UPDATE tvshow plex_id: %s - %s", plex_id, api.title())
             # update new ratings Kodi 17
             rating_id = self.kodidb.get_ratingid(kodi_id, v.KODI_TYPE_SHOW)
             self.kodidb.update_ratings(kodi_id,
@@ -236,7 +236,7 @@ class Show(TvShowMixin, ItemBase):
                                     kodi_id)
         # OR ADD THE TVSHOW #####
         else:
-            LOG.info("ADD tvshow plex_id: %s - %s", plex_id, api.title())
+            LOG.debug("ADD tvshow plex_id: %s - %s", plex_id, api.title())
             # Link the path
             self.kodidb.add_showlinkpath(kodi_id, kodi_pathid)
             rating_id = self.kodidb.get_ratingid(kodi_id, v.KODI_TYPE_SHOW)
@@ -343,14 +343,14 @@ class Season(TvShowMixin, ItemBase):
                 if key in artwork and artwork[key] == parent_artwork[key]:
                     del artwork[key]
         if update_item:
-            LOG.info('UPDATE season plex_id %s - %s', plex_id, api.title())
+            LOG.debug('UPDATE season plex_id %s - %s', plex_id, api.title())
             kodi_id = season['kodi_id']
             if app.SYNC.artwork:
                 self.kodidb.modify_artwork(artwork,
                                            kodi_id,
                                            v.KODI_TYPE_SEASON)
         else:
-            LOG.info('ADD season plex_id %s - %s', plex_id, api.title())
+            LOG.debug('ADD season plex_id %s - %s', plex_id, api.title())
             kodi_id = self.kodidb.add_season(parent_id, api.index())
             if app.SYNC.artwork:
                 self.kodidb.add_artwork(artwork,
@@ -474,7 +474,7 @@ class Episode(TvShowMixin, ItemBase):
 
         # UPDATE THE EPISODE #####
         if update_item:
-            LOG.info("UPDATE episode plex_id: %s - %s", plex_id, api.title())
+            LOG.debug("UPDATE episode plex_id: %s - %s", plex_id, api.title())
             kodi_fileid = self.kodidb.modify_file(filename,
                                                   kodi_pathid,
                                                   api.date_created())
@@ -566,7 +566,7 @@ class Episode(TvShowMixin, ItemBase):
                                     last_sync=self.last_sync)
         # OR ADD THE EPISODE #####
         else:
-            LOG.info("ADD episode plex_id: %s - %s", plex_id, api.title())
+            LOG.debug("ADD episode plex_id: %s - %s", plex_id, api.title())
             kodi_fileid = self.kodidb.add_file(filename,
                                                kodi_pathid,
                                                api.date_created())

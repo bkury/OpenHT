@@ -277,7 +277,7 @@ class Artwork(object):
             LOG.debug('themoviedb answer was %s', data['results'])
             return
 
-        LOG.info('Found themoviedb match for %s: %s',
+        LOG.debug('Found themoviedb match for %s: %s',
                  item.get('title'), match_found)
 
         tmdb_id = str(entry.get('id', ''))

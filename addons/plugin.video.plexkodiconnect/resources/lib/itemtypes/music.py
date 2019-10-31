@@ -190,10 +190,10 @@ class Artist(MusicMixin, ItemBase):
 
         # UPDATE THE ARTIST #####
         if update_item:
-            LOG.info("UPDATE artist plex_id: %s - Name: %s", plex_id, api.title())
+            LOG.debug("UPDATE artist plex_id: %s - Name: %s", plex_id, api.title())
         # OR ADD THE ARTIST #####
         else:
-            LOG.info("ADD artist plex_id: %s - Name: %s", plex_id, api.title())
+            LOG.debug("ADD artist plex_id: %s - Name: %s", plex_id, api.title())
             # safety checks: It looks like plex supports the same artist
             # multiple times.
             # Kodi doesn't allow that. In case that happens we just merge the
@@ -286,7 +286,7 @@ class Album(MusicMixin, ItemBase):
 
         # UPDATE THE ALBUM #####
         if update_item:
-            LOG.info("UPDATE album plex_id: %s - Name: %s", plex_id, name)
+            LOG.debug("UPDATE album plex_id: %s - Name: %s", plex_id, name)
             if v.KODIVERSION >= 18:
                 self.kodidb.update_album(name,
                                          musicBrainzId,
@@ -317,7 +317,7 @@ class Album(MusicMixin, ItemBase):
                                             kodi_id)
         # OR ADD THE ALBUM #####
         else:
-            LOG.info("ADD album plex_id: %s - Name: %s", plex_id, name)
+            LOG.debug("ADD album plex_id: %s - Name: %s", plex_id, name)
             kodi_id = self.kodidb.new_album_id()
             if v.KODIVERSION >= 18:
                 self.kodidb.add_album(kodi_id,
@@ -539,7 +539,7 @@ class Song(MusicMixin, ItemBase):
 
         # UPDATE THE SONG #####
         if update_item:
-            LOG.info("UPDATE song plex_id: %s - %s", plex_id, title)
+            LOG.debug("UPDATE song plex_id: %s - %s", plex_id, title)
             # Use dummy strHash '123' for Kodi
             self.kodidb.update_path(path, kodi_pathid)
             # Update the song entry
@@ -578,7 +578,7 @@ class Song(MusicMixin, ItemBase):
                                            kodi_id)
         # OR ADD THE SONG #####
         else:
-            LOG.info("ADD song plex_id: %s - %s", plex_id, title)
+            LOG.debug("ADD song plex_id: %s - %s", plex_id, title)
             # Add path
             kodi_pathid = self.kodidb.add_path(path)
             # Create the song entry

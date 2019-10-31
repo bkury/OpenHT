@@ -68,7 +68,7 @@ class Movie(ItemBase):
             kodi_pathid = self.kodidb.get_path(path)
 
         if update_item:
-            LOG.info('UPDATE movie plex_id: %s - %s', plex_id, api.title())
+            LOG.debug('UPDATE movie plex_id: %s - %s', plex_id, api.title())
             file_id = self.kodidb.modify_file(filename,
                                               kodi_pathid,
                                               api.date_created())
@@ -110,7 +110,7 @@ class Movie(ItemBase):
                                            kodi_id,
                                            v.KODI_TYPE_MOVIE)
         else:
-            LOG.info("ADD movie plex_id: %s - %s", plex_id, api.title())
+            LOG.debug("ADD movie plex_id: %s - %s", plex_id, api.title())
             file_id = self.kodidb.add_file(filename,
                                            kodi_pathid,
                                            api.date_created())

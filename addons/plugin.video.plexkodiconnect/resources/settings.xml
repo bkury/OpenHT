@@ -40,7 +40,7 @@
 		<setting id="plex_restricteduser" type="bool" default="false" visible="false"/>
 		<setting id="plex_allows_mediaDeletion" type="bool" default="true" visible="false"/>
 		<setting id="companion_show_gdm_port_warning" type="bool" default="true" visible="false"/>
-        <setting id="InstallQuestionsAnswered" type="bool" default="false" visible="false"/>
+        <setting id="InstallQuestionsAnswered" type="bool" default="true" visible="false"/>
         <setting id="SyncInstallRunDone" type="bool" default="false" visible="false"/>
         <setting id="last_migrated_PKC_version" type="text" default="" visible="false"/>
         <setting id="plexAvatar" type="text" default="" visible="false"/>
@@ -77,7 +77,7 @@
         <setting type="lsep" label="30538" /><!-- Manual complete reset of Kodi database necessary, see "Advanced" -->
         <setting id="showExtrasInsteadOfTrailer" type="bool" label="30514" default="false" /><!-- Show all Plex extras instead of immediately playing trailers -->
         <setting id="indicate_media_versions" type="bool" label="39719" default="false" /><!-- Replace user ratings with number of versions -->
-        <setting id="enableMusic" type="bool" label="30509" default="true" />
+        <setting id="enableMusic" type="bool" label="30509" default="false" />
         <setting id="useDirectPaths" type="enum" label="30511" values="Addon (Default)|Direct Paths" default="0" visible="true"/> <!-- Playback mode -->
         <setting label="[COLOR yellow]$ADDON[plugin.video.plexkodiconnect 30517][/COLOR]" type="action" action="RunPlugin(plugin://plugin.video.plexkodiconnect?mode=passwords)" option="close" /><!-- Set network credentials for Direct Paths and direct play -->
 
@@ -134,7 +134,7 @@
 	<category label="30544"><!-- artwork -->
         <setting id="usePlexArtwork" label="30502"  type="bool" default="true" /> <!-- Sync Plex artwork from the PMS -->   
 		<setting id="enableTextureCache" label="30512"  type="bool" default="true" visible="eq(-1,true)"/> <!-- Cache all artwork for a smooth Kodi experience -->
-        <setting id="FanartTV" label="30539" type="bool" default="false" visible="eq(-2,true)"/><!-- Download additional art from FanArtTV -->
+        <setting id="FanartTV" label="30539" type="bool" default="true" visible="eq(-2,true)"/><!-- Download additional art from FanArtTV -->
         <setting id="PreferKodiCollectionArt" label="30543" type="bool" default="true" visible="eq(-1,true) + eq(-3,true)" subsetting="true" /><!-- Prefer Kodi artwork for collections -->
         <setting label="[COLOR yellow]$ADDON[plugin.video.plexkodiconnect 39222][/COLOR]" type="action" action="RunPlugin(plugin://plugin.video.plexkodiconnect/?mode=fanart)" option="close" visible="eq(-2,true) + eq(-4,true)" subsetting="true" /> <!-- Look for missing fanart on FanartTV now -->
         <setting id="imageSyncNotifications" label="30008" type="bool" default="true" visible="eq(-5,true)"/><!-- Enable notifications for image caching -->
