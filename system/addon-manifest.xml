@@ -46,6 +46,7 @@
   <addon>script.module.idna</addon>
   <addon>script.module.certifi</addon>
   <addon>script.favourites</addon>
+  <addon>script.globalsearch</addon>
   <addon optional="true">service.xbmc.versioncheck</addon>
   <addon>skin.estuary</addon>
   <addon>skin.estouchy</addon>
