@@ -42,6 +42,10 @@ def play():
         return
     else:
         request = '%s&handle=%s' % (unicode_paths.decode(sys.argv[2]), HANDLE)
+        if b'resume:true' in sys.argv:
+            request += '&resume=1'
+        elif b'resume:false' in sys.argv:
+            request += '&resume=0'
         transfer.plex_command('PLAY-%s' % request)
     if HANDLE == -1:
         # Handle -1 received, not waiting for main thread

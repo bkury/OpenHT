@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.plexkodiconnect.tvshows" name="PlexKodiConnect Helper TV Shows" version="2.1.1" provider-name="croneter">
+<addon id="plugin.video.plexkodiconnect.tvshows" name="PlexKodiConnect Helper TV Shows" version="2.1.3" provider-name="croneter">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
     </requires>
@@ -15,7 +15,13 @@
         <forum></forum>
         <website>https://github.com/croneter/PlexKodiConnect</website>
         <source></source>
-        <news>version 2.1.1
+        <news>version 2.1.3
+- Fix UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
+
+version 2.1.2
+- Pass along whether we should resume an episode
+
+version 2.1.1
 - Another attempt to keep Kodi from crashing on playback startup
 
 version 2.1.0
