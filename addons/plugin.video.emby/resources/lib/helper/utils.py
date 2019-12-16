@@ -232,12 +232,15 @@ def validate(path):
     if window('emby_pathverified.bool'):
         return True
 
-    path = path if os.path.supports_unicode_filenames else path.encode('utf-8')
+    string = "%s %s. %s" % (_(33047), path, _(33048))
+
+    if not os.path.supports_unicode_filenames:
+        path = path.encode('utf-8')
 
     if not xbmcvfs.exists(path):
         LOG.info("Could not find %s", path)
 
-        if dialog("yesno", heading="{emby}", line1="%s %s. %s" % (_(33047), path, _(33048))):
+        if dialog("yesno", heading="{emby}", line1=string):
 
             return False
 
@@ -274,11 +277,15 @@ def indent(elem, level=0):
         return
 
 def write_xml(content, file):
-    with open(file, 'w') as infile:
 
-        content = content.replace("'", '"')
-        content = content.replace('?>', ' standalone="yes" ?>', 1)
-        infile.write(content)
+    try:
+        with open(file, 'w') as infile:
+
+            content = content.replace("'", '"')
+            content = content.replace('?>', ' standalone="yes" ?>', 1)
+            infile.write(content)
+    except Exception as error:
+        LOG.error(error)
 
 def delete_folder(path=None):
 

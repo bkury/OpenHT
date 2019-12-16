@@ -3,6 +3,8 @@
 # Addon id: plugin.video.emby
 # Addon Provider: angelblue05
 # Translators:
+# Jaroslav Lichtblau <jlichtblau@seznam.cz>, 2019
+# angelblue05 <tamara.angel05@gmail.com>, 2019
 # DJ Sweder <djsweder@gmail.com>, 2019
 # 
 msgid ""
@@ -1145,12 +1147,32 @@ msgstr "Povolit značku pro multi-epizody, např. | # | název"
 
 msgctxt "#33214"
 msgid "Transcode Divx (MSMPEG4V3)"
-msgstr ""
+msgstr "Překódování Divx (MSMPEG4V3)"
 
 msgctxt "#33215"
 msgid "Transcode Xvid (MPEG4)"
-msgstr ""
+msgstr "Překódování Xvid (MPEG4)"
 
 msgctxt "#33216"
 msgid "Transcode Dvd (MPEG2)"
+msgstr "Překódování Dvd (MPEG2)"
+
+msgctxt "#33217"
+msgid ""
+"Verify the connection? Recommended: Disable for self-signed certificate "
+"only."
 msgstr ""
+"Ověřit připojení? Doporučení: Vypnout pouze pro certifikáty podepsané sebou "
+"samým."
+
+msgctxt "#33218"
+msgid "By Year"
+msgstr "Podle roku"
+
+msgctxt "#33219"
+msgid "By Actor"
+msgstr "Podle herce"
+
+msgctxt "#33220"
+msgid "By Tag"
+msgstr "Podle tagu"
