@@ -45,6 +45,7 @@
   <addon>script.module.chardet</addon>
   <addon>script.module.idna</addon>
   <addon>script.module.certifi</addon>
+  <addon>script.module.beautifulsoup</addon>
   <addon>script.favourites</addon>
   <addon>script.globalsearch</addon>
   <addon>skin.estuary</addon>
@@ -59,4 +60,5 @@
   <addon>xbmc.webinterface</addon>
   <addon optional="true">peripheral.joystick</addon>
   <addon>weather.yahoo</addon>
+  <addon>service.tvtunes</addon>
 </addons>

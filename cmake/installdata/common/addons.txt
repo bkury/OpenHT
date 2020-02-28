@@ -32,6 +32,7 @@ addons/script.module.chardet/*
 addons/script.module.idna/*
 addons/script.module.certifi/*
 addons/script.module.defusedxml/*
+addons/script.module.beautifulsoup/*
 addons/script.favourites/*
 addons/script.globalsearch/*
 addons/resource.language.en_gb/*
@@ -61,3 +62,4 @@ addons/plugin.video.emby/*
 addons/plugin.video.emby.movies/*
 addons/plugin.video.emby.tvshows/*
 addons/plugin.video.emby.musicvideos/*
+addons/service.tvtunes/*
