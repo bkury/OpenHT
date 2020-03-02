@@ -966,7 +966,7 @@
       <group id="3" label="14022">
         <setting id="videolibrary.showallitems" type="boolean" label="38011" help="38012">
           <level>2</level>
-          <default>true</default>
+          <default>false</default>
           <control type="toggle" />
         </setting>
         <setting id="videolibrary.showunwatchedplots" type="list[integer]" label="20369" help="36141">
@@ -1097,7 +1097,7 @@
       <group id="3" label="14022">
         <setting id="musiclibrary.showallitems" type="boolean" label="38011" help="38012">
           <level>2</level>
-          <default>true</default>
+          <default>false</default>
           <control type="toggle" />
         </setting>
         <setting id="musiclibrary.showcompilationartists" type="boolean" label="13414" help="36255">
