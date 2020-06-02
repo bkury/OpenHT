@@ -167,7 +167,7 @@ void CMediaCodecVideoBuffer::ReleaseOutputBuffer(bool render, int64_t displayTim
   if (!render || displayTime == 0)
     codec->releaseOutputBuffer(m_bufferId, render);
   else
-    codec->releaseOutputBuffer(m_bufferId, displayTime);
+    codec->releaseOutputBufferAtTime(m_bufferId, displayTime);
   m_bufferId = -1; //mark released
 
   if (xbmc_jnienv()->ExceptionCheck())
@@ -653,6 +653,11 @@ bool CDVDVideoCodecAndroidMediaCodec::Open(CDVDStreamInfo &hints, CDVDCodecOptio
       {
         m_codec = std::shared_ptr<CJNIMediaCodec>(
             new CJNIMediaCodec(CJNIMediaCodec::createByCodecName(m_codecname)));
+        if (xbmc_jnienv()->ExceptionCheck())
+        {
+          xbmc_jnienv()->ExceptionClear();
+          m_codec = nullptr;
+        }
         if (!m_codec)
         {
           CLog::Log(LOGERROR, "CDVDVideoCodecAndroidMediaCodec::Open cannot create codec");
@@ -767,6 +772,8 @@ void CDVDVideoCodecAndroidMediaCodec::Dispose()
   if (!m_opened)
     return;
 
+  CLog::Log(LOGDEBUG, "CDVDVideoCodecAndroidMediaCodec::%s", __func__);
+
   // invalidate any inflight outputbuffers
   FlushInternal();
 
@@ -781,6 +788,7 @@ void CDVDVideoCodecAndroidMediaCodec::Dispose()
   if (m_codec)
   {
     m_codec->stop();
+    m_codec->release();
     m_codec = nullptr;
     m_state = MEDIACODEC_STATE_STOPPED;
   }
@@ -1185,8 +1193,6 @@ bool CDVDVideoCodecAndroidMediaCodec::ConfigureMediaCodec(void)
     CLog::Log(LOGERROR, "CDVDVideoCodecAndroidMediaCodec configure error");
     return false;
   }
-  m_codec->setVideoScalingMode(CJNIMediaCodec::VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING);
-
   m_state = MEDIACODEC_STATE_CONFIGURED;
 
   m_codec->start();
