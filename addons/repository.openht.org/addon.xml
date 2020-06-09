@@ -7,10 +7,16 @@
     <import addon="xbmc.addon" version="12.0.0"/>
   </requires>
 	<extension point="xbmc.addon.repository">
-		<info>https://addons.openht.org/leia/addons.xml.gz</info>
-		<checksum verify="sha256">https://addons.openht.org/leia/addons.xml.gz.sha256</checksum>
-		<datadir>https://addons.openht.org/leia</datadir>
-		<artdir>https://addons.openht.org/leia</artdir>
+		<dir>
+			<info>https://addons.openht.org/leia/addons.xml.gz</info>
+			<checksum>https://addons.openht.org/leia/addons.xml.md5</checksum>
+			<datadir>https://addons.openht.org/leia</datadir>
+		</dir>
+		<dir>
+			<info>https://addons.openht.org/openht/leia/addons.xml</info>
+			<checksum>https://addons.openht.org/openht/leia/addons.xml.md5</checksum>
+			<datadir>https://addons.openht.org/openht/leia</datadir>
+		</dir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="af_ZA">Installeer Byvoegsels vanaf OpenHT.org</summary>
@@ -188,5 +194,9 @@
 		<disclaimer lang="zh_CN">本库中插件不完全由 Kodi 团队开发，Kodi 团队对他人提交的内容不承担责任</disclaimer>
 		<disclaimer lang="zh_TW">這個附加元件庫的附加元件並非全部由 Kodi 團隊製作的，所以我們不對這些內容負責。</disclaimer>
 		<platform>all</platform>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+                </assets>
 	</extension>
 </addon>
