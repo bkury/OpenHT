@@ -32,11 +32,11 @@ IF NOT [%VERSION_TAG%] == [] (
 )
 
 rem ----Usage----
-rem BuildSetup [clean|noclean] [noprompt] [nobinaryaddons] [sh]
+rem BuildSetup [clean|noclean] [noprompt] [binaryaddons] [sh]
 rem clean to force a full rebuild
 rem noclean to force a build without clean
 rem noprompt to avoid all prompts
-rem nobinaryaddons to skip building binary addons
+rem binaryaddons to build binary addons
 rem sh to use sh shell instead rxvt
 CLS
 COLOR 1B
@@ -50,14 +50,14 @@ rem -------------------------------------------------------------
 rem  CONFIG START
 SET buildmode=ask
 SET promptlevel=prompt
-SET buildbinaryaddons=true
+SET buildbinaryaddons=false
 SET exitcode=0
 SET useshell=rxvt
 FOR %%b in (%*) DO (
   IF %%b==clean SET buildmode=clean
   IF %%b==noclean SET buildmode=noclean
   IF %%b==noprompt SET promptlevel=noprompt
-  IF %%b==nobinaryaddons SET buildbinaryaddons=false
+  IF %%b==binaryaddons SET buildbinaryaddons=true
   IF %%b==sh SET useshell=sh
 )
 

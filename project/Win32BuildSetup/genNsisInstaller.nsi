@@ -68,6 +68,10 @@
   !define MUI_FINISHPAGE_LINK_LOCATION "${WEBSITE}"
   !define MUI_FINISHPAGE_RUN "$INSTDIR\${APP_NAME}.exe"
   !define MUI_FINISHPAGE_RUN_NOTCHECKED
+  !define MUI_FINISHPAGE_SHOWREADME ""
+  !define MUI_FINISHPAGE_SHOWREADME_NOTCHECKED
+  !define MUI_FINISHPAGE_SHOWREADME_TEXT "Create Desktop Shortcut"
+  !define MUI_FINISHPAGE_SHOWREADME_FUNCTION finishpageshortcut
   !define MUI_ABORTWARNING
 ;--------------------------------
 ;Pages
@@ -156,6 +160,10 @@ Function DeinstallKodiInDestDir
     ;this also removes the uninstall.exe which doesn't remove it self...
     Delete "$INSTDIR\uninstall.exe"
   ${EndIf}
+FunctionEnd
+
+Function finishpageshortcut
+   CreateShortcut "$desktop\${APP_NAME}.lnk" "$instdir\${APP_NAME}.exe"
 FunctionEnd
 
 ;--------------------------------
