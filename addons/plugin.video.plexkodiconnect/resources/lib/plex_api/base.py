@@ -355,6 +355,12 @@ class Base(object):
         except (KeyError, TypeError):
             pass
 
+    def theme(self):
+        """
+        Returns the theme path as Unicode or None
+        """
+        return self.xml.get('theme')
+
     # Stuff having to do with parent and grandparent items
     ######################################################
     def index(self):
