@@ -82,8 +82,8 @@
         <setting label="[COLOR yellow]$ADDON[plugin.video.plexkodiconnect 30517][/COLOR]" type="action" action="RunPlugin(plugin://plugin.video.plexkodiconnect?mode=passwords)" option="close" /><!-- Set network credentials for Direct Paths and direct play -->
 
         <setting id="streamMusic" type="bool" label="30510" default="false" visible="false" subsetting="true"/> <!-- Direct stream Music library -->
-        <setting id="themoviedbAPIKey" type="text" default="19c90103adb9e98f2172c6a6a3d85dc4" visible="false"/>
-        <setting id="FanArtTVAPIKey" type="text" default="639191cb0774661597f28a47e7e2bad5" visible="false"/>
+        <setting id="themoviedbAPIKey" type="text" default="c5c700f608023a8d3164e03df74e26de" visible="false"/>
+        <setting id="FanArtTVAPIKey" type="text" default="d7f39cef74b44de752c396d2a98ccb5a" visible="false"/>
         <setting id="syncEmptyShows" type="bool" label="30508" default="false" visible="false"/>
         <setting id="kodi_db_has_been_wiped_clean" type="bool" label="PKC needs to completely clean the Kodi DB at least once, then reboot, to avoid Kodi error messages, e.g. OperationalError" default="false" visible="false" />
 	</category>
@@ -101,6 +101,7 @@
 		<setting id="remapSMBphotoOrg" type="text" label="39045" default="" visible="eq(-7,true)" subsetting="true" /> <!-- Original Plex MUSIC path to replace: -->
 		<setting id="remapSMBphotoNew" type="text" label="39046" default="smb://" visible="eq(-8,true)" subsetting="true" /> <!-- Replace Plex MUSIC with: -->
         <setting id="escapePath" type="bool" label="39036" default="false" /> <!-- Escape special characters in path (e.g. space to %20) -->
+        <setting id="escapePathSafeChars" type="text" label="39090" default="%/:=&amp;?~#+!$,;'@()*[]" visible="eq(-1,true)" subsetting="true"/> <!-- Safe characters for http(s), dav(s) and (s)ftp urls -->
 	</category>
 
 	<category label="30516"><!-- Playback -->
