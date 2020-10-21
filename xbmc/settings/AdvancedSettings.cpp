@@ -279,7 +279,7 @@ void CAdvancedSettings::Initialize()
   m_detectAsUdf = false;
 
   m_fanartRes = 1080;
-  m_imageRes = 720;
+  m_imageRes = 1080;
   m_imageScalingAlgorithm = CPictureScalingAlgorithm::Default;
 
   m_sambaclienttimeout = 30;
