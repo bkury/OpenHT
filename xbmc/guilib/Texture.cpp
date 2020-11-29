@@ -441,12 +441,19 @@ bool CBaseTexture::HasAlpha() const
   return m_hasAlpha;
 }
 
-void CBaseTexture::SetMipmapping()
+void CBaseTexture::SetMipmapping(bool FlagAsSpecial)
 {
   m_mipmapping = true;
+  if (FlagAsSpecial)
+    m_mipmappingspecial = true;
 }
 
 bool CBaseTexture::IsMipmapped() const
 {
   return m_mipmapping;
+}
+
+bool CBaseTexture::IsMipmappedSpecial() const
+{
+  return m_mipmappingspecial;
 }
