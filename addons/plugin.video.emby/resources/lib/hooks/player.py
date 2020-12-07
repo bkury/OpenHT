@@ -268,7 +268,11 @@ class Player(xbmc.Player):
 
         ''' Call when playback start to setup play entry in player tracker.
         '''
-        self.playlist = xbmc.PlayList(self.monitor.playlistid)
+        try:
+            self.playlist = xbmc.PlayList(self.monitor.playlistid)
+        except:
+            LOG.warn("PlaylistID is invalid")
+            return
 
         if not file:
             LOG.warn("Filename is invalid")
@@ -312,7 +316,12 @@ class Player(xbmc.Player):
 
                 item['Runtime'] = 0
                 LOG.info("Runtime is missing, Using Zero")
-
+                
+        # workaround for resume in dsplayer 17.6        
+        if xbmc.getCondVisibility('System.HasAddon(script.madvrsettings)'):
+            if item.get('CurrentPosition'):
+                self.seekTime(item.get('CurrentPosition'))   
+                
         try:
             seektime = self.get_time()
         except Exception: # at this point we should be playing and if not then bail out

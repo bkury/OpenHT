@@ -110,13 +110,23 @@ class PlayUtils(object):
 
         return sources
 
+    def SizeToText(self, size, precision = 2):
+        suffixes = ['B', 'KB', 'MB', 'GB', 'TB']
+        suffixIndex = 0
+
+        while size > 1024 and suffixIndex < 4:
+            suffixIndex += 1
+            size = size / 1024.0
+
+        return "%.*f%s" % (precision, size, suffixes[suffixIndex])
+
     def select_source(self, sources, audio=None, subtitle=None):
 
         if len(sources) > 1:
             selection = []
 
             for source in sources:
-                selection.append(source.get('Name', "na"))
+                selection.append(source.get('Name', "na") + " - " + self.SizeToText(float(source.get('Size', "0")))  + " - " + self.SizeToText(float(source.get('Bitrate', "0"))) + "it")
 
             resp = dialog("select", _(33130), selection)
 
@@ -247,13 +257,14 @@ class PlayUtils(object):
             base, params = source['TranscodingUrl'].split('?')
 
             if settings('skipDialogTranscode') != "3" and source.get('MediaStreams'):
-                url_parsed = params.split('&')
+                Temp = params.split('&')
+                url_parsed = ''
 
-                for i in url_parsed:
-                    if 'AudioStreamIndex' in i or 'AudioBitrate' in i or 'SubtitleStreamIndex' in i: # handle manually
-                        url_parsed.remove(i)
+                for Parameter in Temp:
+                    if not 'AudioStreamIndex' in Parameter and not 'AudioBitrate' in Parameter and not 'SubtitleStreamIndex' in Parameter: # handle manually
+                        url_parsed = url_parsed + '&' + Parameter
 
-                params = "%s%s" % ('&'.join(url_parsed), self.get_audio_subs(source, audio, subtitle))
+                params = "%s%s" % (url_parsed, self.get_audio_subs(source, audio, subtitle))
 
             video_type = 'live' if source['Protocol'] == 'LiveTV' else 'master'
             base = base.replace('stream' if 'stream' in base else 'master', video_type, 1)
@@ -644,10 +655,9 @@ class PlayUtils(object):
         if subtitle:
 
             index = subtitle
-            server_settings = self.info['Server']['api'].get_transcode_settings()
             stream = streams[index]
 
-            if server_settings['EnableSubtitleExtraction'] and stream['SupportsExternalStream']:
+            if stream['SupportsExternalStream'] and 'DeliveryUrl' in stream:
                 self.info['SubtitleUrl'] = self.get_subtitles(source, stream, index)
             else:
                 prefs += "&SubtitleStreamIndex=%s" % index
@@ -664,10 +674,9 @@ class PlayUtils(object):
 
                 if index is not None:
 
-                    server_settings = self.info['Server']['api'].get_transcode_settings()
                     stream = streams[index]
 
-                    if server_settings['EnableSubtitleExtraction'] and stream['SupportsExternalStream']:
+                    if stream['SupportsExternalStream'] and 'DeliveryUrl' in stream:
                         self.info['SubtitleUrl'] = self.get_subtitles(source, stream, index)
                     else:
                         prefs += "&SubtitleStreamIndex=%s" % index

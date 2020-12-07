@@ -167,7 +167,7 @@ class ConnectionManager(object):
                 'url': self.get_connect_url("user/authenticate"),
                 'data': {
                     'nameOrEmail': username,
-                    'password': self._get_connect_password_hash(password)
+                    'rawpw': password
                 },
                 'dataType': "json"
             })
@@ -179,7 +179,7 @@ class ConnectionManager(object):
             credentials = self.credentials.get_credentials()
             credentials['ConnectAccessToken'] = result['AccessToken']
             credentials['ConnectUserId'] = result['User']['Id']
-            credentials['ConnectUser'] = result['User']['DisplayName']
+            credentials['ConnectUser'] = result['User']['Name']
             self.credentials.get_credentials(credentials)
             # Signed in
             self._on_connect_user_signin(result['User'])
@@ -200,7 +200,7 @@ class ConnectionManager(object):
                 'url': self.get_emby_url(server, "Users/AuthenticateByName"),
                 'json': {
                     'username': username,
-                    'password': hashlib.sha1(password or "").hexdigest(),
+                    'pw': password or "",
                 }
             }
             if clear:
