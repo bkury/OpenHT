@@ -48,6 +48,7 @@
   <addon>script.module.beautifulsoup</addon>
   <addon>script.favourites</addon>
   <addon>script.globalsearch</addon>
+  <addon>skin.night</addon>
   <addon>skin.estuary</addon>
   <addon>skin.estouchy</addon>
   <addon>webinterface.default</addon>

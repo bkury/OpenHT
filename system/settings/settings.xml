@@ -3157,7 +3157,7 @@
       <group id="1" label="24997">
         <setting id="lookandfeel.skin" type="addon" label="166" help="36103">
           <level>0</level>
-          <default>skin.estuary</default>
+          <default>skin.night</default>
           <constraints>
             <addontype>xbmc.gui.skin</addontype>
           </constraints>
