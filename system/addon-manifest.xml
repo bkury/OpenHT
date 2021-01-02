@@ -29,9 +29,11 @@
   <addon>metadata.common.musicbrainz.org</addon>
   <addon>metadata.common.theaudiodb.com</addon>
   <addon>metadata.common.themoviedb.org</addon>
+  <addon>metadata.common.ofdb.de</addon>
+  <addon>metadata.common.omdbapi.com</addon>
   <addon>metadata.local</addon>
-  <addon>metadata.themoviedb.org</addon>
   <addon>metadata.tvshows.themoviedb.org</addon>
+  <addon>metadata.universal</addon>
   <addon>repository.openht.org</addon>
   <addon>resource.images.weathericons.default</addon>
   <addon>resource.language.en_gb</addon>

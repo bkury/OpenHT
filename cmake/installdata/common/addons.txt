@@ -49,8 +49,10 @@ addons/metadata.common.imdb.com/*
 addons/metadata.common.musicbrainz.org/*
 addons/metadata.common.theaudiodb.com/*
 addons/metadata.common.themoviedb.org/*
-addons/metadata.themoviedb.org/*
 addons/metadata.tvshows.themoviedb.org/*
+addons/metadata.common.ofdb.de/*
+addons/metadata.common.omdbapi.com/*
+addons/metadata.universal/*
 addons/kodi.vfs/*
 addons/weather.yahoo/*
 addons/plugin.video.plexkodiconnect/*

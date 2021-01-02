@@ -1205,7 +1205,7 @@
       <group id="1">
         <setting id="scrapers.moviesdefault" type="addon" label="21413" help="36198">
           <level>4</level>
-          <default>metadata.themoviedb.org</default>
+          <default>metadata.universal</default>
           <constraints>
             <addontype>xbmc.metadata.scraper.movies</addontype>
           </constraints>

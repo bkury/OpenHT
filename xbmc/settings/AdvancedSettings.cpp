@@ -296,9 +296,8 @@ void CAdvancedSettings::Initialize()
 
   m_musicThumbs = "folder.jpg|Folder.jpg|folder.JPG|Folder.JPG|cover.jpg|Cover.jpg|cover.jpeg|thumb.jpg|Thumb.jpg|thumb.JPG|Thumb.JPG";
   m_fanartImages = "fanart.jpg|fanart.png";
-  m_musicArtistExtraArt = { };
-  m_musicAlbumExtraArt = {};
-
+  m_musicArtistExtraArt = { "banner", "clearart", "clearlogo", "landscape" };
+  m_musicAlbumExtraArt = { "back", "discart", "spine" };
   m_bMusicLibraryAllItemsOnBottom = false;
   m_bMusicLibraryCleanOnUpdate = false;
   m_bMusicLibraryArtistSortOnUpdate = false;
@@ -320,12 +319,12 @@ void CAdvancedSettings::Initialize()
   m_bVideoScannerIgnoreErrors = false;
   m_iVideoLibraryDateAdded = 1; // prefer mtime over ctime and current time
 
-  m_videoEpisodeExtraArt = {};
-  m_videoTvShowExtraArt = {};
-  m_videoTvSeasonExtraArt = {};
-  m_videoMovieExtraArt = {};
-  m_videoMovieSetExtraArt = {};
-  m_videoMusicVideoExtraArt = {};
+  m_videoEpisodeExtraArt = { "fanart" };
+  m_videoTvShowExtraArt = { "characterart", "clearart", "clearlogo", "landscape", "keyart" };
+  m_videoTvSeasonExtraArt = { "keyart" };
+  m_videoMovieExtraArt = { "banner", "clearart", "clearlogo", "discart", "landscape", "keyart" };
+  m_videoMovieSetExtraArt = { "banner", "clearart", "clearlogo", "discart", "landscape", "keyart" };
+  m_videoMusicVideoExtraArt = { "banner", "clearart", "clearlogo", "discart", "landscape" };
 
   m_iEpgUpdateCheckInterval = 300; /* Check every X seconds, if EPG data need to be updated. This does not mean that
                                       every X seconds an EPG update is actually triggered, it's just the interval how
