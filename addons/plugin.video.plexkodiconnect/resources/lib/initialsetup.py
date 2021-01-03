@@ -696,6 +696,10 @@ class InitialSetup(object):
         # Make sure that we only ask these questions upon first installation
         utils.settings('InstallQuestionsAnswered', value='true')
 
+        if goto_settings is False:
+            # Open Settings page now? You will need to restart!
+            goto_settings = utils.yesno_dialog(utils.lang(29999),
+                                               utils.lang(39017))
         # New installation - make sure we start with a clean slate
         utils.wipe_database(reboot=False)
         if goto_settings:
