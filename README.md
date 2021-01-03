@@ -1,5 +1,3 @@
-![Kodi Logo](docs/resources/banner.png)
-
 <p align="center">
   <strong>
     <a href="https://kodi.tv/">website</a>
@@ -23,7 +21,7 @@
 </p>
 
 <h1 align="center">
-  Welcome to Kodi Home Theater Software!
+  Welcome to OpenHT!
 </h1>
 
 Kodi is an award-winning **free and open source** software media player and entertainment hub for digital media. Available as a native application for **Android, Linux, BSD, macOS, iOS, and Windows operating systems**, Kodi runs on most common processor architectures.
@@ -31,6 +29,129 @@ Kodi is an award-winning **free and open source** software media player and ente
 Created in 2003 by a group of like minded programmers, Kodi is a non-profit project run by the XBMC Foundation and developed by volunteers located around the world. More than 500 software developers have contributed to Kodi to date, and 100-plus translators have worked to expand its reach, making it available in more than 70 languages.
 
 While Kodi functions very well as a standard media player application for your computer, it has been designed to be the perfect companion for your HTPC. With its **beautiful interface and powerful skinning engine**, Kodi feels very natural to use from the couch with a remote control and is the ideal solution for your home theater.
+
+## OpenHT Changes
+### Included Addons
+<table>
+   <tr>
+      <td width="250">plugin.video.plexkodiconnect</td>
+      <td width="600">PLEX backend addon</td>
+      <td width="100"><a href="https://github.com/croneter/PlexKodiConnect">Source</a></td>
+   </tr>
+   <tr>
+      <td width="250">plugin.video.emby</td>
+      <td width="600">EMBY backend addon</td>
+      <td width="100"><a href="https://github.com/MediaBrowser/plugin.video.emby">Source</a></td>
+   </tr>
+    <tr>
+      <td width="250">skin.night</td>
+      <td width="600">Night (Default Skin)</td>
+      <td width="100"><a href="https://github.com/bkury/skin.night">Source</a></td>
+   </tr>
+   <tr>
+      <td width="250">weather.yahoo</td>
+      <td width="600">Yahoo Weather Addon</td>
+      <td width="100"><a href="https://kodi.wiki/view/Add-on:Yahoo!_Weather">Source</a></td>
+   </tr>
+   <tr>
+      <td width="250">service.tvtunes</td>
+      <td width="600">TV Themes Addon</td>
+      <td width="100"><a href="https://github.com/latts9923/service.tvtunes">Source</a></td>
+   </tr>
+   <tr>
+      <td width="250">script.globalsearch</td>
+      <td width="600">Global Search Addon</td>
+      <td width="100"><a href="https://kodi.wiki/view/Add-on:Global_Search">Source</a></td>
+   </tr>
+     <tr>
+      <td width="250">script.favourites</td>
+      <td width="600">Favourites Addon</td>
+      <td width="100"><a href="https://kodi.wiki/view/Add-on:Favourites_script">Source</a></td>
+   </tr>
+</table>
+
+### Other Patches
+<table>
+   <tr>
+      <td width="250">Global texture mipmapping</td>
+      <td width="600">Enabled by default, imageres/fanartres 1080, Lanczos</td>
+      <td width="100"><a href="https://github.com/axbmcuser/xbmc">Source</td>
+   </tr>
+   <tr>
+      <td width="250">New Boolean</td>
+      <td width="600">System.Platform.OpenHT</td>
+      <td width="100">Source</td>
+   </tr>
+   <tr>
+      <td width="250">Dialog Notification</td>
+      <td width="600">Window(notification).Property(line1,line2,icon)</td>
+      <td width="100">Source</td>
+   </tr>
+   <tr>
+      <td width="250">Extended artwork</td>
+      <td width="600">Advancedsettings.xml, metadata.universal (Default)</td>
+      <td width="100">Source</td>
+   </tr>
+   <tr>
+      <td width="250">LibreELEC</td>
+      <td width="600">Disable network connection check (kodi-100.03-disable-online-check.patch)</td>
+      <td width="100">Source</td>
+   </tr>
+</table>
+
+### Backports (v19 / Matrix)
+<table>
+   <tr>
+      <td width="250">PR18834</td>
+      <td width="600">DXVA2: Fix crash playing HEVC videos on systems with 16 cores / 32 threads</td>
+      <td width="100"><a href="https://github.com/xbmc/xbmc/pull/18834">Source</a></td>
+   </tr>
+   <tr>
+      <td width="250">PR18319</td>
+      <td width="600">[skins] load Startup.xml on skin change</td>
+      <td width="100"><a href="https://github.com/xbmc/xbmc/pull/18319">Source</a></td>
+   </tr>
+   <tr>
+      <td width="250">PR18190</td>
+      <td width="600">[GUIInfo] allow infolabels in all string comparison methods</td>
+      <td width="100"><a href="https://github.com/xbmc/xbmc/pull/18190">Source</a></td>
+   </tr>
+   <tr>
+      <td width="250">PR16707</td>
+      <td width="600">System.HasAddon() - return true for disabled addons</td>
+      <td width="100"><a href="https://github.com/xbmc/xbmc/pull/16707">Source</a></td>
+   </tr>
+   <tr>
+      <td width="250">PR15767</td>
+      <td width="600">Feature: Seek dialog: Add EDL and chapter marker visualisation</td>
+      <td width="100"><a href="https://github.com/xbmc/xbmc/pull/15767">Source</a></td>
+   </tr>
+   <tr>
+      <td width="250">PR15527</td>
+      <td width="600">ListItem.CurrentItem and new Boolean expression IsEven/IsOdd</td>
+      <td width="100"><a href="https://github.com/xbmc/xbmc/pull/15527">Source</a></td>
+   </tr>
+   <tr>
+      <td width="250">PR16152</td>
+      <td width="600">[guilib] add ListItem.FileNameNoExtension infolabel</td>
+      <td width="100"><a href="https://github.com/xbmc/xbmc/pull/16152">Source</a></td>
+   </tr>
+   <tr>
+      <td width="250">PR13762</td>
+      <td width="600">System.AddonIsEnabled() infobool and EnableAddon() builtin</td>
+      <td width="100"><a href="https://github.com/xbmc/xbmc/pull/13762">Source</a></td>
+   </tr>
+   <tr>
+      <td width="250">PR16939</td>
+      <td width="600">Fix missing 'mark watched'/'mark unwatched' context menu (recordings folders)</td>
+      <td width="100"><a href="https://github.com/xbmc/xbmc/pull/16939">Source</a></td>
+   </tr>
+   <tr>
+      <td width="250">PR16885</td>
+      <td width="600">[json] Add missing "status" string for VideoLibrary.GetTVShowDetails</td>
+      <td width="100"><a href="https://github.com/xbmc/xbmc/pull/16885">Source</a></td>
+   </tr>
+</table>
 
 ## Give your media the love it deserves
 Kodi can be used to play almost all popular audio and video formats around. It was designed for network playback, so you can stream your multimedia from anywhere in the house or directly from the internet using practically any protocol available.
