@@ -626,9 +626,7 @@ class InitialSetup(object):
             if utils.settings('kodi_db_has_been_wiped_clean') == 'false':
                 # If the user chose to go to the PKC settings on the first run
                 # Will trigger a reboot
-                utils.wipe_database()
-            if reboot is True:
-                utils.reboot_kodi()
+                utils.wipe_database(reboot=False)
             # Reload relevant settings
             app.CONN.load()
             app.ACCOUNT.load()

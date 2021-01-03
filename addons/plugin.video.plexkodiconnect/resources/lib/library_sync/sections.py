@@ -656,10 +656,7 @@ def _sync_from_pms(pick_libraries):
             old_sections.append(Section(section_db_element=section_db))
     # Update our latest PMS sections with info saved in the PMS DB
     _retrieve_old_settings(sections, old_sections)
-    if (app.CONN.machine_identifier != utils.settings('sections_asked_for_machine_identifier') or
-            pick_libraries):
-        if not pick_libraries:
-            LOG.info('First time connecting to this PMS, choosing libraries')
+    if pick_libraries:
         _choose_libraries(sections)
 
     # We got everything - save to Plex db in case Kodi restarts before we're
