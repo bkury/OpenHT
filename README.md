@@ -107,6 +107,16 @@ While Kodi functions very well as a standard media player application for your c
       <td width="100"><a href="https://github.com/xbmc/xbmc/pull/18834">Source</a></td>
    </tr>
    <tr>
+      <td width="250">PR17576</td>
+      <td width="600">VideoPlayer.offset() infolabels</td>
+      <td width="100"><a href="https://github.com/xbmc/xbmc/pull/17576">Source</a></td>
+   </tr>
+   <tr>
+      <td width="250">PR18410</td>
+      <td width="600">Player.offset() infolabels</td>
+      <td width="100"><a href="https://github.com/xbmc/xbmc/pull/18410">Source</a></td>
+   </tr>
+   <tr>
       <td width="250">PR18319</td>
       <td width="600">[skins] load Startup.xml on skin change</td>
       <td width="100"><a href="https://github.com/xbmc/xbmc/pull/18319">Source</a></td>

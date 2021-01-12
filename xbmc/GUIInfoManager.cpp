@@ -8870,11 +8870,7 @@ int CGUIInfoManager::TranslateSingleString(const std::string &strCondition, bool
       {
         return AddMultiInfo(CGUIInfo(VIDEOPLAYER_CONTENT, prop.param(), 0));
       }
-      for (const infomap& i : videoplayer)
-      {
-        if (prop.name == i.str)
-          return i.val;
-      }
+      return TranslateVideoPlayerString(prop.name);
     }
     else if (cat.name == "retroplayer")
     {
@@ -9109,6 +9105,36 @@ int CGUIInfoManager::TranslateSingleString(const std::string &strCondition, bool
         return AddMultiInfo(CGUIInfo(value, 1, position)); // 1 => relative
       }
     }
+    else if (info[0].name == "videoplayer")
+    { //! @todo these two don't allow duration(foo) and also don't allow more than this number of levels...
+      if (info[1].name == "position")
+      {
+        int position = atoi(info[1].param().c_str());
+        int value = TranslateVideoPlayerString(info[2].name); // videoplayer.position(foo).bar
+        return AddMultiInfo(CGUIInfo(value, 2, position)); // 2 => absolute (0 used for not set)
+      }
+      else if (info[1].name == "offset")
+      {
+        int position = atoi(info[1].param().c_str());
+        int value = TranslateVideoPlayerString(info[2].name); // videoplayer.offset(foo).bar
+        return AddMultiInfo(CGUIInfo(value, 1, position)); // 1 => relative
+      }
+    }
+    else if (info[0].name == "player")
+    { //! @todo these two don't allow duration(foo) and also don't allow more than this number of levels...
+      if (info[1].name == "position")
+      {
+        int position = atoi(info[1].param().c_str());
+        int value = TranslatePlayerString(info[2].name); // player.position(foo).bar
+        return AddMultiInfo(CGUIInfo(value, 2, position)); // 2 => absolute (0 used for not set)
+      }
+      else if (info[1].name == "offset")
+      {
+        int position = atoi(info[1].param().c_str());
+        int value = TranslatePlayerString(info[2].name); // player.offset(foo).bar
+        return AddMultiInfo(CGUIInfo(value, 1, position)); // 1 => relative
+      }
+    }
     else if (info[0].name == "container")
     {
       if (info[1].name == "listitem" ||
@@ -9207,6 +9233,26 @@ int CGUIInfoManager::TranslateListItem(const Property& cat, const Property& prop
 int CGUIInfoManager::TranslateMusicPlayerString(const std::string &info) const
 {
   for (const infomap& i : musicplayer)
+  {
+    if (info == i.str)
+      return i.val;
+  }
+  return 0;
+}
+
+int CGUIInfoManager::TranslateVideoPlayerString(const std::string& info) const
+{
+  for (const infomap& i : videoplayer)
+  {
+    if (info == i.str)
+      return i.val;
+  }
+  return 0;
+}
+
+int CGUIInfoManager::TranslatePlayerString(const std::string& info) const
+{
+  for (const infomap& i : player_labels)
   {
     if (info == i.str)
       return i.val;
