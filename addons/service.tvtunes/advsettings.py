@@ -35,7 +35,7 @@ class AdvSettings():
 
     def __init__(self):
         # Find out where the advancedsettings.xml file is located
-        self.advSettingsXmlFile = xbmc.translatePath('special://masterprofile/advancedsettings.xml').decode("utf-8")
+        self.advSettingsXmlFile = translatePath('special://masterprofile/advancedsettings.xml').decode("utf-8")
         log("Advancedsettings.xml Location: %s" % self.advSettingsXmlFile)
         self.bak_timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
 
@@ -148,5 +148,5 @@ if __name__ == '__main__':
             advSet.updateAdvancedSettings()
             del advSet
         except:
-            log("TvTunes: %s" % traceback.format_exc(), xbmc.LOGERROR)
+            log("TvTunes: %s" % traceback.format_exc(), LOGERROR)
             xbmcgui.Dialog().ok(ADDON.getLocalizedString(32105), ADDON.getLocalizedString(32093), ADDON.getLocalizedString(32094))

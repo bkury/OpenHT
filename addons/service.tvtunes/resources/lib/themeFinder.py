@@ -16,16 +16,16 @@ else:
     import json as simplejson
 
 # Import the common settings
-from settings import Settings
-from settings import log
-from settings import os_path_join
-from settings import os_path_split
-from settings import list_dir
-from settings import dir_exists
-from settings import os_path_isfile
-from settings import normalize_string
+from resources.lib.settings import Settings
+from resources.lib.settings import log
+from resources.lib.settings import os_path_join
+from resources.lib.settings import os_path_split
+from resources.lib.settings import list_dir
+from resources.lib.settings import dir_exists
+from resources.lib.settings import os_path_isfile
+from resources.lib.settings import normalize_string
 
-from VideoParser import VideoParser
+from resources.lib.VideoParser import VideoParser
 
 
 #############################################
@@ -147,8 +147,8 @@ class NfoReader():
 
             del nfoXml
         except:
-            log("NfoReader: Failed to process NFO: %s" % nfoFileName, True, xbmc.LOGERROR)
-            log("NfoReader: %s" % traceback.format_exc(), True, xbmc.LOGERROR)
+            log("NfoReader: Failed to process NFO: %s" % nfoFileName, True, LOGERROR)
+            log("NfoReader: %s" % traceback.format_exc(), True, LOGERROR)
             returnValue = False
 
         # Not that the entire NFO file has been read, see if we need to verify
@@ -639,7 +639,7 @@ class MusicThemeFiles():
         # Take the list of files and create a playlist from them
         # Needs to be a Music playlist otherwise repeat will not work
         # via the JSON interface
-        playlist = xbmc.PlayList(xbmc.PLAYLIST_MUSIC)
+        playlist = PlayList(PLAYLIST_MUSIC)
         playlist.clear()
         for aFile in self.themeFiles:
             # Add the theme file to a playlist
@@ -697,13 +697,13 @@ class MusicThemeFiles():
     def _getThemesForActiveItem(self):
         themes = []
         # There could be several sections for the music library so check the different options
-        albumArtist = xbmc.getInfoLabel('ListItem.AlbumArtist')
+        albumArtist = getInfoLabel('ListItem.AlbumArtist')
         log("MusicThemeFiles: AlbumArtist is %s" % albumArtist, self.debug_logging_enabled)
 
-        artist = xbmc.getInfoLabel('ListItem.Artist')
+        artist = getInfoLabel('ListItem.Artist')
         log("MusicThemeFiles: Artist is %s" % artist, self.debug_logging_enabled)
 
-        album = xbmc.getInfoLabel('ListItem.Album')
+        album = getInfoLabel('ListItem.Album')
         log("MusicThemeFiles: Album is %s" % album, self.debug_logging_enabled)
 
         # Now build up the JSON command using the values we have
@@ -727,7 +727,7 @@ class MusicThemeFiles():
             # Join all the filters together
             filterStr = ', '.join(filterValues)
             cmd = '{"jsonrpc": "2.0", "method": "AudioLibrary.GetSongs", "params": {"properties": ["title", "file"], "filter": { "and": [%s] }},"id": 1 }' % filterStr
-            json_query = xbmc.executeJSONRPC(cmd)
+            json_query = executeJSONRPC(cmd)
             json_query = simplejson.loads(json_query)
             log("MusicThemeFiles: json reply %s" % str(json_query), self.debug_logging_enabled)
             if ("result" in json_query) and ('songs' in json_query['result']):

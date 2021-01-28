@@ -12,16 +12,16 @@ else:
     import json as simplejson
 
 # Import the common settings
-from settings import Settings
-from settings import log
-from settings import os_path_join
-from settings import os_path_split
-from settings import normalize_string
-from settings import WindowShowing
+from resources.lib.settings import Settings
+from resources.lib.settings import log
+from resources.lib.settings import os_path_join
+from resources.lib.settings import os_path_split
+from resources.lib.settings import normalize_string
+from resources.lib.settings import WindowShowing
 
-from themeFinder import ThemeFiles
-from themeFinder import MusicThemeFiles
-from themePlayer import ThemePlayer
+from resources.lib.themeFinder import ThemeFiles
+from resources.lib.themeFinder import MusicThemeFiles
+from resources.lib.themePlayer import ThemePlayer
 
 
 #########################################################
@@ -107,7 +107,7 @@ class TunesBackend():
     def runAsAService(self):
         logVideoLibraryNotShowing = True
 
-        while not xbmc.abortRequested:
+        while not xbmc.Monitor().abortRequested():
             # Wait a little before starting the check each time
             xbmc.sleep(200)
 
@@ -135,7 +135,7 @@ class TunesBackend():
                     # screen-saver, otherwise the action of us stopping the theme will reset the
                     # timeout and the user will have to wait longer
                     log("TunesBackend: Restarting screensaver that TvTunes stopped")
-                    xbmc.executebuiltin("ActivateScreensaver", True)
+                    executebuiltin("ActivateScreensaver", True)
                 continue
 
             # Check if TvTunes is blocked from playing any themes
@@ -324,7 +324,7 @@ class TunesBackend():
                             # Make a call to the database to find out the root path of this TV Show
                             filterStr = '{"operator": "is", "field": "title", "value": "%s"}' % tvshowTitle
                             cmd = '{"jsonrpc": "2.0", "method": "VideoLibrary.GetTVShows", "params": {"properties": ["file"], "filter": %s},"id": 1 }' % filterStr
-                            json_query = xbmc.executeJSONRPC(cmd)
+                            json_query = executeJSONRPC(cmd)
                             json_query = simplejson.loads(json_query)
                             if ("result" in json_query) and ('tvshows' in json_query['result']):
                                 # Get the path to the TV Show and compare it to where we were previously
@@ -353,7 +353,7 @@ class TunesBackend():
             # Get Movie Set Data Base ID
             dbid = xbmc.getInfoLabel("ListItem.DBID")
             # Get movies from Movie Set
-            json_query = xbmc.executeJSONRPC('{"jsonrpc": "2.0", "method": "VideoLibrary.GetMovieSetDetails", "params": {"setid": %s, "properties": [ "thumbnail" ], "movies": { "properties":  [ "file", "title"], "sort": { "order": "ascending",  "method": "title" }} },"id": 1 }' % dbid)
+            json_query = executeJSONRPC('{"jsonrpc": "2.0", "method": "VideoLibrary.GetMovieSetDetails", "params": {"setid": %s, "properties": [ "thumbnail" ], "movies": { "properties":  [ "file", "title"], "sort": { "order": "ascending",  "method": "title" }} },"id": 1 }' % dbid)
             json_query = unicode(json_query, 'utf-8', errors='ignore')
             json_query = simplejson.loads(json_query)
             if ("result" in json_query) and ('setdetails' in json_query['result']):

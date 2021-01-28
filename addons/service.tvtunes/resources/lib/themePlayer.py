@@ -12,9 +12,9 @@ else:
     import json as simplejson
 
 # Import the common settings
-from settings import Settings
-from settings import log
-from settings import WindowShowing
+from resources.lib.settings import Settings
+from resources.lib.settings import log
+from resources.lib.settings import WindowShowing
 
 
 ###################################
@@ -186,7 +186,7 @@ class ThemePlayer(xbmc.Player):
             if Settings.isLoop():
                 xbmc.executebuiltin("PlayerControl(RepeatAll)")
                 # We no longer use the JSON method to repeat as it does not work with videos
-                # xbmc.executeJSONRPC('{ "jsonrpc": "2.0", "method": "Player.SetRepeat", "params": {"playerid": 0, "repeat": "all" }, "id": 1 }')
+                # executeJSONRPC('{ "jsonrpc": "2.0", "method": "Player.SetRepeat", "params": {"playerid": 0, "repeat": "all" }, "id": 1 }')
 
                 # If we had a random start and we are looping then we need to make sure
                 # when it comes to play the theme for a second time it starts at the beginning
@@ -196,7 +196,7 @@ class ThemePlayer(xbmc.Player):
             else:
                 xbmc.executebuiltin("PlayerControl(RepeatOff)")
                 # We no longer use the JSON method to repeat as it does not work with videos
-                # xbmc.executeJSONRPC('{ "jsonrpc": "2.0", "method": "Player.SetRepeat", "params": {"playerid": 0, "repeat": "off" }, "id": 1 }')
+                # executeJSONRPC('{ "jsonrpc": "2.0", "method": "Player.SetRepeat", "params": {"playerid": 0, "repeat": "off" }, "id": 1 }')
 
             # Record the time that playing was started
             self.startTime = int(time.time())
@@ -257,7 +257,7 @@ class ThemePlayer(xbmc.Player):
             else:
                 log("ThemePlayer: No reduced volume option set")
         except:
-            log("ThemePlayer: %s" % traceback.format_exc(), True, xbmc.LOGERROR)
+            log("ThemePlayer: %s" % traceback.format_exc(), True, LOGERROR)
 
     # Graceful end of the playing, will fade if set to do so
     def endPlaying(self, fastFade=False, slowFade=False):
@@ -281,10 +281,10 @@ class ThemePlayer(xbmc.Player):
 
             vol_step = cur_vol / numSteps
             # do not mute completely else the mute icon shows up
-            for step in range(0, (numSteps - 1)):
+            for step in range(0, int(numSteps - 1)):
                 # If the system is going to be shut down then we need to reset
                 # everything as quickly as possible
-                if WindowShowing.isShutdownMenu() or xbmc.abortRequested:
+                if WindowShowing.isShutdownMenu() or xbmc.Monitor().abortRequested():
                     log("ThemePlayer: Shutdown menu detected, cancelling fade out")
                     break
                 vol = cur_vol - vol_step
@@ -309,7 +309,7 @@ class ThemePlayer(xbmc.Player):
                         # So we know that we did play a video, now we are
                         # playing an audio file, so set repeat on the current item
                         log("ThemePlayer: Setting single track to repeat %s" % self.playListItems[1])
-                        xbmc.executebuiltin("PlayerControl(RepeatOne)")
+                        executebuiltin("PlayerControl(RepeatOne)")
                         self.repeatOneSet = True
         except:
             log("ThemePlayer: Failed to check audio repeat after video")
@@ -421,7 +421,7 @@ class ThemePlayer(xbmc.Player):
 
             if hasVideoFiles:
                 # Save off the existing refresh setting
-                jsonresponse = xbmc.executeJSONRPC('{"jsonrpc": "2.0", "method": "Settings.GetSettingValue",  "params": { "setting": "videoplayer.adjustrefreshrate" }, "id": 1}')
+                jsonresponse = executeJSONRPC('{"jsonrpc": "2.0", "method": "Settings.GetSettingValue",  "params": { "setting": "videoplayer.adjustrefreshrate" }, "id": 1}')
                 data = simplejson.loads(jsonresponse)
                 if 'result' in data:
                     if 'value' in data['result']:
@@ -433,6 +433,6 @@ class ThemePlayer(xbmc.Player):
                 if self.original_refreshrate != 0:
                     # Disable the refresh rate setting
                     log("ThemePlayer: Disabling refresh rate")
-                    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "method": "Settings.SetSettingValue",  "params": { "setting": "videoplayer.adjustrefreshrate", "value": 0 }, "id": 1}')
+                    executeJSONRPC('{"jsonrpc": "2.0", "method": "Settings.SetSettingValue",  "params": { "setting": "videoplayer.adjustrefreshrate", "value": 0 }, "id": 1}')
         except:
             log("ThemePlayer: Failed to process video refresh")

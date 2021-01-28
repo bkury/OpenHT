@@ -14,9 +14,9 @@ ADDON_ID = ADDON.getAddonInfo('id')
 def log(txt, debug_logging_enabled=True, loglevel=xbmc.LOGDEBUG):
     if ((ADDON.getSetting("logEnabled") == "true") and debug_logging_enabled) or (loglevel != xbmc.LOGDEBUG):
         if isinstance(txt, str):
-            txt = txt.decode("utf-8")
+            txt = txt
         message = u'%s: %s' % (ADDON_ID, txt)
-        xbmc.log(msg=message.encode("utf-8"), level=loglevel)
+        log(message, loglevel)
 
 
 def normalize_string(text):
@@ -112,7 +112,7 @@ def list_dir(dirpath):
     # There is a problem with the afp protocol that means if a directory not ending
     # in a / is given, an error happens as it just appends the filename to the end
     # without actually checking there is a directory end character
-    #    http://forum.xbmc.org/showthread.php?tid=192255&pid=1681373#pid1681373
+    #    http://forum.org/showthread.php?tid=192255&pid=1681373#pid1681373
     if dirpath.startswith('afp://') and (not dirpath.endswith('/')):
         dirpath = os_path_join(dirpath, '/')
     return xbmcvfs.listdir(dirpath)
@@ -228,7 +228,7 @@ class WindowShowing():
                 return False
 
             # Only pay attention to the forced playing if there is actually media playing
-            if xbmc.Player().isPlaying():
+            if Player().isPlaying():
                 return True
         return False
 
@@ -333,7 +333,7 @@ class Settings():
 
     @staticmethod
     def getCustomPath():
-        return ADDON.getSetting("custom_path").decode("utf-8")
+        return ADDON.getSetting("custom_path")
 
     @staticmethod
     def getThemeVolume():
