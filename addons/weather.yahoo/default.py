@@ -25,7 +25,7 @@ from utils import *
 
 LCURL = 'https://www.yahoo.com/news/_tdnews/api/resource/WeatherSearch;text=%s'
 FCURL = 'https://www.yahoo.com/news/_tdnews/api/resource/WeatherService;woeids=%%5B%s%%5D'
-GCURL = 'https://ipinfo.io/geo?token=92c3fcccb393e8'
+GCURL = 'https://data.openht.org/geoip'
 
 socket.setdefaulttimeout(10)
 
