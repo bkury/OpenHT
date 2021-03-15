@@ -54,11 +54,6 @@ While Kodi functions very well as a standard media player application for your c
       <td width="100"><a href="https://kodi.wiki/view/Add-on:Yahoo!_Weather">Source</a></td>
    </tr>
    <tr>
-      <td width="250">service.tvtunes</td>
-      <td width="600">TV Themes Addon</td>
-      <td width="100"><a href="https://github.com/latts9923/service.tvtunes">Source</a></td>
-   </tr>
-   <tr>
       <td width="250">script.globalsearch</td>
       <td width="600">Global Search Addon</td>
       <td width="100"><a href="https://kodi.wiki/view/Add-on:Global_Search">Source</a></td>

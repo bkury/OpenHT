@@ -63,5 +63,4 @@
   <addon>xbmc.webinterface</addon>
   <addon optional="true">peripheral.joystick</addon>
   <addon>weather.yahoo</addon>
-  <addon>service.tvtunes</addon>
 </addons>

@@ -62,4 +62,3 @@ addons/plugin.video.emby/*
 addons/plugin.video.emby.movies/*
 addons/plugin.video.emby.tvshows/*
 addons/plugin.video.emby.musicvideos/*
-addons/service.tvtunes/*
