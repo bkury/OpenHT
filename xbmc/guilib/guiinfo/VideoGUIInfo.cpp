@@ -148,6 +148,14 @@ bool CVideoGUIInfo::GetLabel(std::string& value, const CFileItem *item, int cont
           return true;
         }
         break;
+      case VIDEOPLAYER_TVSHOWDBID:
+      case LISTITEM_TVSHOWDBID:
+        if (tag->m_iIdShow > -1)
+        {
+          value = StringUtils::Format("%i", tag->m_iIdShow);
+          return true;
+        }
+        break;
       case VIDEOPLAYER_RATING:
       case LISTITEM_RATING:
       {

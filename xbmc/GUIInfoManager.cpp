@@ -3107,7 +3107,8 @@ const infomap videoplayer[] =    {{ "title",            VIDEOPLAYER_TITLE },
                                   { "canresumelivetv",  VIDEOPLAYER_CAN_RESUME_LIVE_TV },
                                   { "imdbnumber",       VIDEOPLAYER_IMDBNUMBER },
                                   { "episodename",      VIDEOPLAYER_EPISODENAME },
-                                  { "dbid",             VIDEOPLAYER_DBID }
+                                  { "dbid",             VIDEOPLAYER_DBID },
+                                  { "tvshowdbid",       VIDEOPLAYER_TVSHOWDBID },
 };
 
 /// \page modules__infolabels_boolean_conditions
@@ -5882,7 +5883,8 @@ const infomap listitem_labels[]= {{ "thumb",            LISTITEM_THUMB },
                                   { "art",              LISTITEM_ART },
                                   { "property",         LISTITEM_PROPERTY },
                                   { "parentalrating",   LISTITEM_PARENTAL_RATING },
-                                  { "currentitem",      LISTITEM_CURRENTITEM }
+                                  { "currentitem",      LISTITEM_CURRENTITEM },
+                                  { "tvshowdbid",       LISTITEM_TVSHOWDBID },
 };
 
 /// \page modules__infolabels_boolean_conditions
