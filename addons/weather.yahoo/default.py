@@ -117,9 +117,10 @@ def location(loc):
     return locs, locids
 
 def get_data(api, search):
+    headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.72 Safari/537.36'}
     url = api % search
     try:
-        response = requests.get(url)
+        response = requests.get(url, headers=headers, timeout=10)
         return response.json()
     except:
         return
