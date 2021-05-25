@@ -48,6 +48,7 @@
   <addon>script.module.idna</addon>
   <addon>script.module.certifi</addon>
   <addon>script.module.beautifulsoup</addon>
+  <addon>script.module.six</addon>
   <addon>script.favourites</addon>
   <addon>script.globalsearch</addon>
   <addon>skin.night</addon>
