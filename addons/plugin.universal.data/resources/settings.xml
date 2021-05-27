@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+
+	<!-- General --> 
+	<category label="30100">
+                <setting id="debug" label="30101" type="bool" default="false" />
+		<setting label="Clear Cache" type="action" action="RunScript(plugin.universal.data,0,?action=clearcache)" option="close" />
+        </category>
+
+</settings>
+

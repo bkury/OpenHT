@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<content cache="0">
+
+	<!-- OpenHT -->
+	<item>
+		<label>OpenHT</label>
+		<folder>true</folder>
+		<path>plugin://plugin.universal.data?url=https://data.openht.org/directory.xml</path>
+	</item>
+
+</content>

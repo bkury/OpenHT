@@ -64,4 +64,5 @@
   <addon>xbmc.webinterface</addon>
   <addon optional="true">peripheral.joystick</addon>
   <addon>weather.yahoo</addon>
+  <addon>plugin.universal.data</addon>
 </addons>

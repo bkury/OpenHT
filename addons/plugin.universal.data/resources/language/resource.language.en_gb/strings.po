@@ -1,0 +1,137 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-02-15 08:04+0100\n"
+"PO-Revision-Date: 2019-02-15 08:04+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en_GB\n"
+
+#: Settings
+msgctxt "#30100"
+msgid "General"
+msgstr ""
+
+msgctxt "#30101"
+msgid "Debug"
+msgstr ""
+
+#: Navigation
+msgctxt "#30110"
+msgid "Page"
+msgstr ""
+
+msgctxt "#30111"
+msgid "Show all"
+msgstr ""
+
+#: Categories
+msgctxt "#30120"
+msgid "News"
+msgstr ""
+
+msgctxt "#30121"
+msgid "Sport"
+msgstr ""
+
+msgctxt "#30122"
+msgid "Technology"
+msgstr ""
+
+msgctxt "#30123"
+msgid "World"
+msgstr ""
+
+msgctxt "#30124"
+msgid "Finance"
+msgstr ""
+
+msgctxt "#30125"
+msgid "Politics"
+msgstr ""
+
+msgctxt "#30126"
+msgid "Business"
+msgstr ""
+
+msgctxt "#30127"
+msgid "Economics"
+msgstr ""
+
+msgctxt "#30128"
+msgid "Entertainment"
+msgstr ""
+
+msgctxt "#30129"
+msgid "Beauty"
+msgstr ""
+
+msgctxt "#30130"
+msgid "Travel"
+msgstr ""
+
+msgctxt "#30131"
+msgid "Music"
+msgstr ""
+
+msgctxt "#30132"
+msgid "Food"
+msgstr ""
+
+msgctxt "#30133"
+msgid "Science"
+msgstr ""
+
+msgctxt "#30134"
+msgid "Movies"
+msgstr ""
+
+msgctxt "#30135"
+msgid "TV Shows"
+msgstr ""
+
+msgctxt "#30136"
+msgid "Games"
+msgstr ""
+
+#: Countries
+msgctxt "#30150"
+msgid "Australia"
+msgstr ""
+
+msgctxt "#30151"
+msgid "Austria"
+msgstr ""
+
+msgctxt "#30152"
+msgid "Canada"
+msgstr ""
+
+msgctxt "#30153"
+msgid "France"
+msgstr ""
+
+msgctxt "#30154"
+msgid "Germany"
+msgstr ""
+
+msgctxt "#30155"
+msgid "Russia"
+msgstr ""
+
+msgctxt "#30156"
+msgid "Spain"
+msgstr ""
+
+msgctxt "#30157"
+msgid "United Kingdom"
+msgstr ""
+
+msgctxt "#30158"
+msgid "United States"
+msgstr ""
+
